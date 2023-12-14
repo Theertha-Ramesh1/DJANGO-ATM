@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Deposit Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .deposit-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container deposit-container">
+    <h2 class="text-center">WITHDRAW</h2>
+    <form method="POST" action="/withdraw/{{ins.id}}">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Rs.</span>
+                </div>
+                <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter the withdraw amount">
+            </div>
+        </div>
+        <button class="btn btn-success btn-block">Withdraw</button>
+    </form>
+</div>
+
+
+</body>
+</html>

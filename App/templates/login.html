@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .login-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-login {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+	    <div align="center" style="background-color: #007bff; color: #f8f9fa;">
+        <h1 >STATE BANK OF INDIA</h1>
+        <h3>Online Banking</h3>
+     </div>
+    <div class="login-container">
+        <form class="login-form" method="POST" action="/login/">
+            {% csrf_token %}
+            <h2 class="mb-4">Login</h2>
+
+            <div class="form-group">
+                <label for="account">CARD Number:</label>
+                <input type="text" class="form-control" id="account" name="card_no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">PIN:</label>
+                <input type="text" class="form-control" id="password" name="pin" required>
+            </div>
+
+            <a href="/profile/"><button type="submit" class="btn btn-login btn-block">Login</button></a>
+        </form>
+    </div><br>
+    <div align="center"><a href="/signup/">Create a new account?</a></div>
+</div>
+
+
+</body>
+</html>
+
+
